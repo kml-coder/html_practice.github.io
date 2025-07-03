@@ -5,6 +5,12 @@
   <title>iframe 예제</title>
 </head>
 <body>
+  <h1><a href="main.html">Main</a></h1>
+  <ul>
+      <li><a href="iframe.html" target = "_self" title = "iframe">iframe</a></li>
+      <li><a href="new.html" target = "_self"title = "new">new</a></li>
+      <li><a href="new1.html" target = "_self" title = "new">new1</a></li>
+  </ul>
   <h1>iframe 예제</h1>
 
   <p>아래 버튼을 누르면 오른쪽 iframe 안에서 페이지가 열립니다:</p>
@@ -22,5 +28,18 @@
     height="400"
     style="border: 1px solid gray;">
   </iframe>
+
+  <hr>
+  If google website doesn't work use this to use google websearch<br>
+  <form action ="https://www.google.com/search" method="get" target = "_blank">
+    <input type="text" name ="q" placeholder ="집어넣으세욧">
+    <button type = "submit">검색</button>
+  </form>
+  If Naver website doesn't work use this to use google websearch<br>
+  <form action ="https://search.naver.com/search.naver" method="get" target = "_blank">
+    <input type="text" name ="query" placeholder ="집어넣으세욧">
+    <button type = "submit">검색</button>
+  </form>
+ <!--naver 검색은 query를 사용용--> 
 </body>
 </html>
