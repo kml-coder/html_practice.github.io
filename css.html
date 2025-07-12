@@ -11,9 +11,7 @@
         #first{
             color:green;
         }
-        span{
-            background-color:blue;
-        } 
+        
     </style> <!-- .은 class #은 id, 아무것도 안 적으면 태그, 겹치는 속성이 있을때는 div> id > class > 태그 (모든 글자가 빨간색이 돼. (<h1>, <p>, <span> 등 전부))> 전체 순서로 -->
     <!-- 선택자(Selector) 는 어떤 HTML 요소에 CSS 스타일을 적용할지 지정하는 이름이야.-->
 </head>
@@ -23,6 +21,26 @@
     <span class="js">이건 전체를 안씀</span>
     <span id="first" class="js">qwew</span>
     <span id="first">eqwe</span>
+    <input type="button" value="Night" onclick="
+    document.querySelector('.js').style.backgroundColor='black';"><br>
+    <input type = "text" id="inputText" placeholder="이름을 입력하세요" onkeyup="handleKeyUp(event)"> <input type="button" value="Change" onclick="updateVariable()">
+    <br>
+    안녕하세요 제 이름은 <span id="displayName">홍길동</span>입니다.
+    <script>
+        let myvariable = "홍길동"
+        function updateVariable() {
+            let newValue = document.getElementById('inputText').value;
+            myvariable = newValue;
+            document.getElementById('displayName').innerText = myvariable;
+        }
+        function handleKeyUp(event){
+            if(event.key === "Enter"){
+                updateVariable();
+            }
+        }
+
+
+    </script>
 </body> <!-- css를 쓰고 싶을때는 style을 쓰면 된다, 부분은 -->
 <!-- id 는 학생 id, class는 반전체, class는 포괄적, id는 집중적으로, id는 한번 등장하면 더 쓰면 안된다-->
 
