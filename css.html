@@ -21,11 +21,13 @@
     <span class="js">이건 전체를 안씀</span>
     <span id="first" class="js">qwew</span>
     <span id="first">eqwe</span>
-    <input type="button" value="Night" onclick="
-    document.querySelector('.js').style.backgroundColor='black';"><br>
+    <input type="button"  class = "toggle" value="night" onclick="toggleMode(this)">
+    <!-- 토글이라는 개념 버튼 누름에 따라 value도 그렇고 상태도 계속 바뀜-->
+    <input type ="button" value = "이건전체를 안씀 버튼" onclick="document.querySelector('.js').style.backgroundColor='black';"><br>
     <input type = "text" id="inputText" placeholder="이름을 입력하세요" onkeyup="handleKeyUp(event)"> <input type="button" value="Change" onclick="updateVariable()">
     <br>
     안녕하세요 제 이름은 <span id="displayName">홍길동</span>입니다.
+
     <script>
         let myvariable = "홍길동"
         function updateVariable() {
@@ -38,9 +40,28 @@
                 updateVariable();
             }
         }
-
-
     </script>
+    <script>
+        function toggleMode(clickedbutton){
+            const body = document.querySelector('body');
+            const allbuttons = document.querySelectorAll('.toggle');
+            if(clickedbutton.value === 'night'){
+                body.style.backgroundColor='black';
+                body.style.color = 'white';
+                allbuttons.forEach(btn => btn.value = 'day');
+
+            }
+            else{
+                body.style.backgroundColor ='white'; 
+                body.style.color = 'black';
+                allbuttons.forEach(btn => btn.value = 'night');
+            }   
+        }
+    </script>
+
+
+
+    <input type="button" class = "toggle" value="night" onclick="toggleMode(this)">
 </body> <!-- css를 쓰고 싶을때는 style을 쓰면 된다, 부분은 -->
 <!-- id 는 학생 id, class는 반전체, class는 포괄적, id는 집중적으로, id는 한번 등장하면 더 쓰면 안된다-->
 
