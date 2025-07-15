@@ -44,20 +44,46 @@
     <script>
         function toggleMode(clickedbutton){
             const body = document.querySelector('body');
+            const links = document.querySelectorAll('a');
             const allbuttons = document.querySelectorAll('.toggle');
             if(clickedbutton.value === 'night'){
                 body.style.backgroundColor='black';
                 body.style.color = 'white';
+                let i = 0;
+                while(i< links.length ){
+                    links[i].style.color = 'powderblue';
+                    i++;
+                }
                 allbuttons.forEach(btn => btn.value = 'day');
 
             }
             else{
+                let i = 0;
                 body.style.backgroundColor ='white'; 
                 body.style.color = 'black';
+                while(i< links.length ){
+                    links[i].style.color = 'blue';
+                    i++;
+                }
                 allbuttons.forEach(btn => btn.value = 'night');
             }   
         }
     </script>
+    <script>
+        var names = ["Kyungmin", "Jun"];
+        names.push("SungJae");
+        document.write("<br>" + names);
+    </script>
+    <!-- push로 add할 수 있고 filter로 조건을 달아 제거할 수 있다 -->
+     <ol>
+    <script>
+        var i = 0;
+        while(i < names.length){
+            document.write('<li><a href = "http://a.com/'+ names[i] +' "> '+ names[i] +'</a></li>');
+            i++;
+        }
+     </script>
+     </ol>
 
 
 

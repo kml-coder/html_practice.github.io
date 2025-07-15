@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Array Example</title>
+</head>
+<body>
+    <script>
+        var names = ["Kyungmin", "Jun"];
+        document.write(names[0]);
+    </script>
+    <br>
+    <script>
+        document.write(names);
+        names.push("SungJae");
+        
+        document.write("<br>" + names);
+    </script>
+    <!-- push로 add할 수 있고 filter로 조건을 달아 제거할 수 있다 -->
+     <ol>
+    <script>
+        var i = 0;
+        while(i < names.length){
+            document.write('<li><a href = "http://a.com/'+ names[i] +' "> '+ names[i] +'</a></li>');
+            i++;
+        }
+     </script>
+     </ol>
+     
+</body>
+</html>
