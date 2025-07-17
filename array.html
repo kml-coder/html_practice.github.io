@@ -6,15 +6,25 @@
 </head>
 <body>
     <script>
-        var names = ["Kyungmin", "Jun"];
+        let names = ["Kyungmin", "Jun"];
+        let profile={
+            Name: "Kyungmin",
+            Age: 23,
+            Job:"software engineer",
+            Print: function(){
+                document.write("Kyungmin is Cool");
+            }
+        };
         document.write(names[0]);
+        profile["Food"] = "Chicken";
     </script>
     <br>
     <script>
         document.write(names);
         names.push("SungJae");
-        
-        document.write("<br>" + names);
+        document.write("<br> After adding SungJae => " + names);
+        names = names.filter(name => name !== "Jun");
+        document.write("<br> After filtering Jun => " + names);
     </script>
     <!-- push로 add할 수 있고 filter로 조건을 달아 제거할 수 있다 -->
      <ol>
@@ -24,8 +34,21 @@
             document.write('<li><a href = "http://a.com/'+ names[i] +' "> '+ names[i] +'</a></li>');
             i++;
         }
+        profile.showAll = function(){
+            for(let key in this){
+                if(typeof profile[key] ==="function") continue; // key의 value가 함수라면 제외, 이전 것은 if(key === "ShowAll") 로 key의 string이름이 showall이면 continue 하는 거였다
+                document.write(key+": "+ this[key] + "<br>");
+            }
+            
+        }
+        // 이걸 통해서 알게된거는 이제 뭐에다 []를 붙이는거는 키 or 인덱스로 불러오는 것이고 .앞에 있는 것은 객체, 뒤에 있는 것은 함수라는 것을 알 수 있다.
+        
      </script>
      </ol>
+     <script>
+        profile.showAll();
+        profile.Print();
+     </script>
      
 </body>
 </html>
